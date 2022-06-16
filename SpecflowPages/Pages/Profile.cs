@@ -231,6 +231,7 @@ namespace MarsFramework.Pages
         public void SelectAvailability(string option)
         {
             AvailabilityTimeEdit.Click();
+            Thread.Sleep(1000);
             AvailabilityTime.Click();
             Thread.Sleep(2000);
 
