@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace MarsFramework.Pages
-{
-    
+﻿namespace MarsFramework.Pages
+{   
     // This is just a place holder class
     // Have a look at SignIn.cs for patterns using PageFactory
+    // This file is temporary and will be deleted at some point
 
     public class Addition
     {

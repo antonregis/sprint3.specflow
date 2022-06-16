@@ -3,7 +3,7 @@ using MarsFramework.Pages;
 using NUnit.Framework;
 
 
-namespace MarsFramework.StepDefinitions
+namespace MarsFramework.Test
 {
     [Binding]
     public class AdditionFeatureStepDefinitions
