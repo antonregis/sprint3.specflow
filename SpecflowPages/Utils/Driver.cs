@@ -30,11 +30,5 @@ namespace MarsFramework.Utils
         {
             driver.Navigate().GoToUrl(ConstantHelper.BaseUrl);
         }
-
-        // Close the browser
-        public void Close()
-        {
-            driver.Close();
-        }
     }
 }

@@ -72,15 +72,15 @@ namespace MarsFramework.Pages
         private IWebElement EarnTargetDropdown { get; set; }
 
         //Click on Earn Target option         
-        [FindsBy(How = How.XPath, Using = "//option[contains(text(),'Less than $500 per month')]")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[4]/div/span/select/option[2]")]
         private IWebElement EarnTargetLessThan500PerMonth { get; set; }
 
         //Click on Earn Target option 
-        [FindsBy(How = How.XPath, Using = "//option[contains(text(),'Between $500 and $1000 per month')]")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[4]/div/span/select/option[3]")]
         private IWebElement EarnTargetBetween500and1000PerMonth { get; set; }
 
         //Click on Earn Target option 
-        [FindsBy(How = How.XPath, Using = "//option[contains(text(),'More than $1000 per month')]")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[2]/div/div/div/div/div/div[3]/div/div[4]/div/span/select/option[4]")]
         private IWebElement EarnTargetMoreThan1000PerMonth { get; set; }
 
         //Get Hours Value
@@ -272,7 +272,7 @@ namespace MarsFramework.Pages
         {
             EarnTargetEdit.Click();
             EarnTargetDropdown.Click();
-            Thread.Sleep(500);
+            Thread.Sleep(2000);
 
             if (option == "Less than $500 per month")
             {
