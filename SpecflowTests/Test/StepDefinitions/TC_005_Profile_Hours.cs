@@ -16,7 +16,7 @@ namespace MarsFramework.Test
             ProfileObj.SelectHours("Less than 30hours a week");
         }
 
-        [Then(@"User Should be able to Select the Hours")]
+        [Then(@"User Should be able to Select the Hours successfully")]
         public void ThenUserShouldBeAbleToSelectTheHours()
         {
             string result = ProfileObj.GetHoursValue();
@@ -31,7 +31,7 @@ namespace MarsFramework.Test
             ProfileObj.SelectHours(p0);
         }
 
-        [Then(@"User Should be able to Select the Hours to '([^']*)'")]
+        [Then(@"User Should be able to Select the Hours to '([^']*)' successfully")]
         public void ThenUserShouldBeAbleToSelectTheHoursTo(string p0)
         {
             string result = ProfileObj.GetHoursValue();

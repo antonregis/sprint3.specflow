@@ -94,7 +94,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("User should be able to Click on Hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.Then("User Should be able to Select the Hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User Should be able to Select the Hours successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -124,7 +124,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When(string.Format("User should be able to Click on Hours to \'{0}\'", option), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
- testRunner.Then(string.Format("User Should be able to Select the Hours to \'{0}\'", option), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("User Should be able to Select the Hours to \'{0}\' successfully", option), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

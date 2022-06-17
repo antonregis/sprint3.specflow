@@ -95,7 +95,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("User should be able to Click on Availability", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
- testRunner.Then("User Should be able to Select Availability Time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User Should be able to Select Availability Time successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -122,7 +122,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("User should be able to Click on Availability to Full Time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.Then("User Should be able to Edit the Availability Time to Full Time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User Should be able to Edit the Availability Time to Full Time successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

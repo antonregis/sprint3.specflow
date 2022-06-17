@@ -34,7 +34,7 @@ namespace MarsFramework.Utils
         // Close the browser
         public void Close()
         {
-            driver.Quit();
+            driver.Close();
         }
     }
 }

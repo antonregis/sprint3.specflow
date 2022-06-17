@@ -17,8 +17,8 @@ namespace MarsFramework.Test
             ProfileObj.SelectAvailability("Part Time");
         }
 
-        [Then(@"User Should be able to Select Availability Time")]
-        public void ThenUserShouldBeAbleToSelectAvailabilityTime()
+        [Then(@"User Should be able to Select Availability Time successfully")]
+        public void ThenUserShouldBeAbleToSelectAvailabilityTimeSuccessfully()
         {
             string result = ProfileObj.GetAvailabilityTimeValue();
             string expectedResult = "Part Time";
@@ -31,8 +31,8 @@ namespace MarsFramework.Test
             ProfileObj.SelectAvailability("Full Time");
         }
 
-        [Then(@"User Should be able to Edit the Availability Time to Full Time")]
-        public void ThenUserShouldBeAbleToEditTheAvailabilityTimeToFullTime()
+        [Then(@"User Should be able to Edit the Availability Time to Full Time successfully")]
+        public void ThenUserShouldBeAbleToEditTheAvailabilityTimeToFullTimeSuccessfully()
         {
             string result = ProfileObj.GetAvailabilityTimeValue();
             string expectedResult = "Full Time";
