@@ -80,7 +80,7 @@ namespace MarsFramework.Utils
             catch (Exception e)
             {
                 // ReSharper disable once LocalizableElement
-                Console.WriteLine("Exception occurred in ExcelLib Class ReadData Method!" + Environment.NewLine +
+                Console.WriteLine("Exception occurred in ExcelLibHelper Class ReadData Method!" + Environment.NewLine +
                                   e.Message);
                 return null;
             }

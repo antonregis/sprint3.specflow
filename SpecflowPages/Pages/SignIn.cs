@@ -38,9 +38,9 @@ namespace MarsFramework.Pages
         {
             NavigateToBaseUrl();
             SignIntab.Click();
-            ExcelLibHelper.PopulateInCollection(ConstantHelper.ExcelSigninDataPath, "Credentials");
-            Email.SendKeys(ExcelLibHelper.ReadData(2,"username"));
-            Password.SendKeys(ExcelLibHelper.ReadData(2, "password"));
+            ExcelLibHelper.PopulateInCollection(ConstantHelper.ExcelDataPath, "SignIn");
+            Email.SendKeys(ExcelLibHelper.ReadData(2,"Username"));
+            Password.SendKeys(ExcelLibHelper.ReadData(2, "Password"));
             LoginBtn.Click();
             WaitForPageToLoad();
         }

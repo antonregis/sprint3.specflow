@@ -19,6 +19,9 @@
 
         // ExcelSigninDataPath
         public static string ExcelSigninDataPath = RelativePath.setup(@"\..\..\..\..\SpecflowTests\Data\Excel\Mars.xlsx");
+
+        // FileUpload
+        public static string Fileupload = RelativePath.setup(@"\..\..\..\..\SpecflowTests\Data\Fileupload\");
     }
 
     class RelativePath
