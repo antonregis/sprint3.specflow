@@ -57,7 +57,7 @@ namespace MarsFramework.Pages
         [FindsBy(How = How.XPath, Using = "//*[@class='item category' and contains(text(),'Video & Animation')]")] private IWebElement categoryVideoAnimation { get; set; }
         [FindsBy(How = How.XPath, Using = "//*[@class='item category' and contains(text(),'Music & Audio')]")] private IWebElement categoryMusicAudio { get; set; }
         [FindsBy(How = How.XPath, Using = "//*[@class='item category' and contains(text(),'Programming & Tech')]")] private IWebElement categoryProgrammingTech { get; set; }
-        [FindsBy(How = How.XPath, Using = "//*[@class='item category' and contains(text(),'Business')]")] private IWebElement categoryBusiness { get; set; }
+        [FindsBy(How = How.XPath, Using = "//*[@class='item category' and contains(text(),'Business')]")] private IWebElement categoryBusiness { get; set; }        
         [FindsBy(How = How.XPath, Using = "//*[@class='item category' and contains(text(),'Fun & Lifestyle')]")] private IWebElement categoryFunLifestyle { get; set; }
 
         //Subcategory filters
@@ -98,9 +98,9 @@ namespace MarsFramework.Pages
             WaitForPageToLoad();
         }
 
-        public void SearchBySubCategory(string skillToSearch, string category, string subCategory)
+        public void SearchBySubCategory(string skillToSearch, string category)
         {
-            driver.Navigate().GoToUrl(ExcelLibHelper.ReadData(2, "Url") + "/Home/Search");
+            search.Click();
             WaitForPageToLoad();
 
             if (category == "Graphics & Design")

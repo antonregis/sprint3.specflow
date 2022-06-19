@@ -79,6 +79,7 @@ namespace MarsFramework.Utils
             else if (title == "Search") // Search Results
             {
                 WaitFor("//*[@id='service-search-section']/div[2]/div/section/div/div[2]/div/div[2]/div/div/div/a/img", "any Profile image");
+                Thread.Sleep(1000);
             }
             else if (title == "ReceivedRequest") // Search Results
             {
