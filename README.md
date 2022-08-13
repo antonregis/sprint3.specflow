@@ -11,8 +11,3 @@
 - ExtentReports ExtentHtmlReporter
 - ExtentReports Screenshots
 - AutoIT
-
-**GROUP MEMBERS:**
-- Renu Kaul
-- Piue Shri
-- Anthony Regis
