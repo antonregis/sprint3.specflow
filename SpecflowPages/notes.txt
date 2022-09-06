@@ -1,6 +1,6 @@
 Using:
-chromedriver.exe version 102.0.5005.61
-https://chromedriver.storage.googleapis.com/index.html?path=102.0.5005.61/
+chromedriver.exe version 105.0.5195.52
+https://chromedriver.storage.googleapis.com/index.html?path=105.0.5195.52/
 
 Other notes:
 taskkill /IM "chromedriver.exe" /F
