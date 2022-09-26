@@ -6,10 +6,12 @@ using static MarsFramework.Utils.CommonMethods;
 
 namespace MarsFramework.Pages
 {
-    public class ManageListings : Driver
+    public class ManageListings
     {
-        public ManageListings()
+        IWebDriver driver;
+        public ManageListings(IWebDriver _driver)
         {
+            driver = _driver;
             PageFactory.InitElements(driver, this);
         }
 

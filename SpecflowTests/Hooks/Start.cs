@@ -38,7 +38,7 @@ namespace MarsFramework.Utils
             Initialize();
 
             // Run SignIn
-            SignIn SignInObj = new SignIn();
+            SignIn SignInObj = new SignIn(driver);
             SignInObj.SignInStep();
 
             // ExtentReport: Create node or the Scenario

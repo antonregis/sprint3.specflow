@@ -1,15 +1,15 @@
 using TechTalk.SpecFlow;
 using MarsFramework.Pages;
 using NUnit.Framework;
-
+using MarsFramework.Utils;
 
 namespace MarsFramework.Test
 {
     [Binding]
-    public class ProfileStepDefinitions
+    public class ProfileStepDefinitions : Driver
     {
         // Initializing page object
-        Profile ProfileObj = new Profile();
+        Profile ProfileObj = new Profile(driver);
 
         [When(@"User should be able to Click on Availability")]
         public void WhenUserShouldBeAbleToClickOnAvailability()

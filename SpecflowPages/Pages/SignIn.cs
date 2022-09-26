@@ -6,10 +6,12 @@ using static MarsFramework.Utils.CommonMethods;
 
 namespace MarsFramework.Pages
 {
-    public class SignIn : Driver
+    public class SignIn
     {
-        public SignIn()
+        IWebDriver driver;
+        public SignIn(IWebDriver _driver)
         {
+            driver = _driver;
             PageFactory.InitElements(driver, this);
         }
 
@@ -36,7 +38,7 @@ namespace MarsFramework.Pages
 
         public void SignInStep()
         {
-            NavigateToBaseUrl();
+            Driver.NavigateToBaseUrl();
             SignIntab.Click();
             ExcelLibHelper.PopulateInCollection(ConstantHelper.ExcelDataPath, "SignIn");
             Email.SendKeys(ExcelLibHelper.ReadData(2,"Username"));

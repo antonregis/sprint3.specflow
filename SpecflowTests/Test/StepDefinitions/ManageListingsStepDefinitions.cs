@@ -1,13 +1,14 @@
 using TechTalk.SpecFlow;
 using MarsFramework.Pages;
 using NUnit.Framework;
+using MarsFramework.Utils;
 
 namespace MarsFramework.Test
 {
     [Binding]
-    public class ManageListingsStepDefinitions
+    public class ManageListingsStepDefinitions : Driver
     {
-        ManageListings ManageListingsObj = new ManageListings();
+        ManageListings ManageListingsObj = new ManageListings(driver);
 
         [When(@"User should be able to click Manage Listings and Delete button")]
         public void WhenUserShouldBeAbleToClickManageListingsAndDeleteButton()
@@ -27,7 +28,7 @@ namespace MarsFramework.Test
         
         // Temporary code, just to have a managelisting/shareskill entry to delete
 
-        ShareSkill ShareSkillObj = new ShareSkill();
+        ShareSkill ShareSkillObj = new ShareSkill(driver);
 
         [When(@"User should be able to create new ShareSkill")]
         public void WhenUserShouldBeAbleToCreateNewShareSkill()

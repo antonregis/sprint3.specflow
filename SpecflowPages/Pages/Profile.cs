@@ -7,11 +7,12 @@ using static MarsFramework.Utils.CommonMethods;
 
 namespace MarsFramework.Pages
 {
-    public class Profile : Driver
+    public class Profile
     {
-
-        public Profile()
+        IWebDriver driver;
+        public Profile(IWebDriver _driver)
         {
+            driver = _driver;
             PageFactory.InitElements(driver, this);
         }
 

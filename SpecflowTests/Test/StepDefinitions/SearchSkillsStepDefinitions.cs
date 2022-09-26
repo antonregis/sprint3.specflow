@@ -1,13 +1,14 @@
 using TechTalk.SpecFlow;
 using MarsFramework.Pages;
 using NUnit.Framework;
+using MarsFramework.Utils;
 
 namespace MarsFramework.Test
 {
     [Binding]
-    public class SearchSkillsStepDefinitions
+    public class SearchSkillsStepDefinitions : Driver
     {
-        SearchSkills SearchSkillsObj = new SearchSkills();
+        SearchSkills SearchSkillsObj = new SearchSkills(driver);
 
         [When(@"User should be able click Search with blank entry")]
         public void WhenUserShouldBeAbleClickSearchWithBlankEntry()
@@ -20,7 +21,7 @@ namespace MarsFramework.Test
         {
             string result1 = SearchSkillsObj.GetAllCategories();
             int result2 = int.Parse(SearchSkillsObj.GetAllCategoriesResult());
-            string expectedResult1 = "All Categories";
+            //string expectedResult1 = "All Categories";
         }
 
         [When(@"User should be able to click on '([^']*)', Sub Category and enter '([^']*)' on Search box")]

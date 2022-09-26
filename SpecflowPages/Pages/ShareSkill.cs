@@ -7,10 +7,12 @@ using AutoItX3Lib;
 
 namespace MarsFramework.Pages
 {
-    public class ShareSkill : Driver
+    public class ShareSkill
     {
-        public ShareSkill()
+        IWebDriver driver;
+        public ShareSkill(IWebDriver _driver)
         {
+            driver = _driver;
             PageFactory.InitElements(driver, this);
         }
 

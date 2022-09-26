@@ -1,13 +1,14 @@
 using TechTalk.SpecFlow;
 using MarsFramework.Pages;
 using NUnit.Framework;
+using MarsFramework.Utils;
 
 namespace MarsFramework.Test
 {
     [Binding]
-    public class ManageRequestStepDefinitions
+    public class ManageRequestStepDefinitions : Driver
     {
-        ReceivedRequest ReceivedRequestObj = new ReceivedRequest();
+        ReceivedRequest ReceivedRequestObj = new ReceivedRequest(driver);
 
         [When(@"User should be able to load Manage Requests page and click Accept")]
         public void WhenUserShouldBeAbleToLoadManageRequestsPageAndClickAccept()
