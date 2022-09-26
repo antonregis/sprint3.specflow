@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace MarsFramework.Test
 {
     [Binding]
-    public class TC_016_ManageRequest_ReceivedRequest
+    public class ManageRequestStepDefinitions
     {
         ReceivedRequest ReceivedRequestObj = new ReceivedRequest();
 

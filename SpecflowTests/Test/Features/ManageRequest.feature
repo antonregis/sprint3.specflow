@@ -1,4 +1,4 @@
-﻿Feature: TC_016_ManageRequest_ReceivedRequest
+﻿Feature: ManageRequest
 
 Validate "Received Request" on ReceivedRequest page.
 User is able to accept and decline "Received Requests".

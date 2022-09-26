@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace MarsFramework.Test
 {
     [Binding]
-    public class TC_015_ManageListings_Delete
+    public class ManageListingsStepDefinitions
     {
         ManageListings ManageListingsObj = new ManageListings();
 

@@ -1,4 +1,4 @@
-﻿Feature: TC_015_ManageListings_Delete
+﻿Feature: ManageListings
 
 Validate "Manage Listings" on ListingManagement page.
 User is able to edit and delete "Listing".

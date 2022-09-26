@@ -20,23 +20,23 @@ namespace SpecflowTests.Test.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TC_011_Profile_Description")]
-    public partial class TC_011_Profile_DescriptionFeature
+    [NUnit.Framework.DescriptionAttribute("ManageListings")]
+    public partial class ManageListingsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "TC_011_Profile_Description.feature"
+#line 1 "ManageListings.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test/Features", "TC_011_Profile_Description", "Validate \"Description\" on Profile page.\r\nUser is able to enter and edit \"Descript" +
-                    "ion\".", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test/Features", "ManageListings", "Validate \"Manage Listings\" on ListingManagement page.\r\nUser is able to edit and d" +
+                    "elete \"Listing\".", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,13 +75,13 @@ namespace SpecflowTests.Test.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("TC_011_01\tCheck if the user is able to Enter Descripriton")]
-        public void TC_011_01CheckIfTheUserIsAbleToEnterDescripriton()
+        [NUnit.Framework.DescriptionAttribute("TC_015_00 Add Sharekskill temporary code - TC_015_02 Prerequisite")]
+        public void TC_015_00AddSharekskillTemporaryCode_TC_015_02Prerequisite()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC_011_01\tCheck if the user is able to Enter Descripriton", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC_015_00 Add Sharekskill temporary code - TC_015_02 Prerequisite", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -91,24 +91,24 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
- testRunner.When("User should be able to Click Edit Description and Enter Description", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+ testRunner.When("User should be able to create new ShareSkill", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
- testRunner.Then("User should be able to Save the Description successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 8
+ testRunner.Then("User should be able create ShareSkill successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("TC_011_02 Check if the user is able to Edit Description")]
-        public void TC_011_02CheckIfTheUserIsAbleToEditDescription()
+        [NUnit.Framework.DescriptionAttribute("TC_015_02 Check if the user is able to \"Delete\" listing")]
+        public void TC_015_02CheckIfTheUserIsAbleToDeleteListing()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC_011_02 Check if the user is able to Edit Description", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TC_015_02 Check if the user is able to \"Delete\" listing", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -118,11 +118,11 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 12
- testRunner.When("User should be able to Edit Description", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+ testRunner.When("User should be able to click Manage Listings and Delete button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
- testRunner.Then("User should be able to Save the Edited Description successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+ testRunner.Then("User should be able to click on Yes and see a has been deleted notification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
