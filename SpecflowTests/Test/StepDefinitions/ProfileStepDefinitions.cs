@@ -11,45 +11,45 @@ namespace MarsFramework.Test
         // Initializing page object
         Profile ProfileObj = new Profile(driver);
 
-        [When(@"User should be able to Click on Availability")]
-        public void WhenUserShouldBeAbleToClickOnAvailability()
+        [When(@"User should be able to Click on '([^']*)' Availability")]
+        public void WhenUserShouldBeAbleToClickOnAvailability(string p0)
         {
-            ProfileObj.SelectAvailability("Part Time");
+            ProfileObj.SelectAvailability(p0);
         }
 
-        [Then(@"User Should be able to Select Availability Time successfully")]
-        public void ThenUserShouldBeAbleToSelectAvailabilityTimeSuccessfully()
+        [Then(@"User Should be able to Select '([^']*)' Availability Time successfully")]
+        public void ThenUserShouldBeAbleToSelectAvailabilityTimeSuccessfully(string p0)
         {
             string result = ProfileObj.GetAvailabilityTimeValue();
-            string expectedResult = "Part Time";
+            string expectedResult = p0;
             Assert.That(result, Is.EqualTo(expectedResult));
         }
 
-        [When(@"User should be able to Click on Availability to Full Time")]
-        public void WhenUserShouldBeAbleToClickOnAvailabilityToFullTime()
+        [When(@"User should be able to Click on Availability to '([^']*)'")]
+        public void WhenUserShouldBeAbleToClickOnAvailabilityToFullTime(string p0)
         {
-            ProfileObj.SelectAvailability("Full Time");
+            ProfileObj.SelectAvailability(p0);
         }
 
-        [Then(@"User Should be able to Edit the Availability Time to Full Time successfully")]
-        public void ThenUserShouldBeAbleToEditTheAvailabilityTimeToFullTimeSuccessfully()
+        [Then(@"User Should be able to Edit the Availability Time to '([^']*)' successfully")]
+        public void ThenUserShouldBeAbleToEditTheAvailabilityTimeToFullTimeSuccessfully(string p0)
         {
             string result = ProfileObj.GetAvailabilityTimeValue();
-            string expectedResult = "Full Time";
+            string expectedResult = p0;
             Assert.That(result, Is.EqualTo(expectedResult));
         }
 
-        [When(@"User should be able to Click on Hours")]
-        public void WhenUserShouldBeAbleToClickOnHours()
+        [When(@"User should be able to Click on '([^']*)' Hours")]
+        public void WhenUserShouldBeAbleToClickOnHours(string p0)
         {
-            ProfileObj.SelectHours("Less than 30hours a week");
+            ProfileObj.SelectHours(p0); //Less than 30hours a week
         }
 
-        [Then(@"User Should be able to Select the Hours successfully")]
-        public void ThenUserShouldBeAbleToSelectTheHours()
+        [Then(@"User Should be able to Select the '([^']*)' Hours successfully")]
+        public void ThenUserShouldBeAbleToSelectTheHours(string p0)
         {
             string result = ProfileObj.GetHoursValue();
-            string expectedResult = "Less than 30hours a week";
+            string expectedResult = p0;
             Assert.That(result, Is.EqualTo(expectedResult));
         }
 
@@ -68,17 +68,17 @@ namespace MarsFramework.Test
             Assert.That(result, Is.EqualTo(expectedResult));
         }
 
-        [When(@"User should be able to Click on Edit Earn Target")]
-        public void WhenUserShouldBeAbleToClickOnEditEarnTarget()
+        [When(@"User should be able to Click on '([^']*)' Earn Target")]
+        public void WhenUserShouldBeAbleToClickOnEditEarnTarget(string p0)
         {
-            ProfileObj.SelectEarnTarget("Less than $500 per month");
+            ProfileObj.SelectEarnTarget(p0);
         }
 
-        [Then(@"User Should be able to Select the Earn Target option successfully")]
-        public void ThenUserShouldBeAbleToSelectTheEarnTargetOptionSuccessfully()
+        [Then(@"User Should be able to Select the '([^']*)' Earn Target successfully")]
+        public void ThenUserShouldBeAbleToSelectTheEarnTargetOptionSuccessfully(string p0)
         {
             string result = ProfileObj.GetEarnTargetValue();
-            string expectedResult = "Less than $500 per month";
+            string expectedResult = p0;
             Assert.That(result, Is.EqualTo(expectedResult));
         }
 
@@ -96,31 +96,31 @@ namespace MarsFramework.Test
             Assert.That(result, Is.EqualTo(expectedResult));
         }
 
-        [When(@"User should be able to Click Edit Description and Enter Description")]
-        public void WhenUserShouldBeAbleToClickEditDescriptionAndEnterDescription()
+        [When(@"User should be able to Click Edit Description and Enter '([^']*)'")]
+        public void WhenUserShouldBeAbleToClickEditDescriptionAndEnterDescription(string p0)
         {
-            ProfileObj.EnterDescription("Enter test description text area here.");
+            ProfileObj.EnterDescription(p0);
         }
 
-        [Then(@"User should be able to Save the Description successfully")]
-        public void ThenUserShouldBeAbleToSaveTheDescriptionSuccessfully()
+        [Then(@"User should be able to Save the '([^']*)' successfully")]
+        public void ThenUserShouldBeAbleToSaveTheDescriptionSuccessfully(string p0)
         {
             string result = ProfileObj.GetDescriptionValue();
-            string expectedResult = "Enter test description text area here.";
+            string expectedResult = p0;
             Assert.That(result, Is.EqualTo(expectedResult));
         }
 
-        [When(@"User should be able to Edit Description")]
-        public void WhenUserShouldBeAbleToEditDescription()
+        [When(@"User should be able to Edit '([^']*)'")]
+        public void WhenUserShouldBeAbleToEditDescription(string p0)
         {
-            ProfileObj.EnterDescription("Lorem Ipsum is simply dummy text of the printing and typesetting industry.");
+            ProfileObj.EnterDescription(p0);
         }
 
-        [Then(@"User should be able to Save the Edited Description successfully")]
-        public void ThenUserShouldBeAbleToSaveTheEditedDescriptionSuccessfully()
+        [Then(@"User should be able to Save the Edited '([^']*)' successfully")]
+        public void ThenUserShouldBeAbleToSaveTheEditedDescriptionSuccessfully(string p0)
         {
             string result = ProfileObj.GetDescriptionValue();
-            string expectedResult = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
+            string expectedResult = p0;
             Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
