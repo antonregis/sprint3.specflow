@@ -6,10 +6,12 @@ using static MarsFramework.Utils.CommonMethods;
 
 namespace MarsFramework.Pages
 {
-    public class ReceivedRequest : Driver
+    public class ReceivedRequest
     {
-        public ReceivedRequest()
+        IWebDriver driver;
+        public ReceivedRequest(IWebDriver _driver)
         {
+            driver = _driver;
             PageFactory.InitElements(driver, this);
         }
 

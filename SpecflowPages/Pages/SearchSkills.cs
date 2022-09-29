@@ -6,10 +6,12 @@ using static MarsFramework.Utils.CommonMethods;
 
 namespace MarsFramework.Pages
 {
-    public class SearchSkills : Driver
+    public class SearchSkills
     {
-        public SearchSkills()
+        IWebDriver driver;
+        public SearchSkills(IWebDriver _driver)
         {
+            driver = _driver;
             PageFactory.InitElements(driver, this);
         }
 

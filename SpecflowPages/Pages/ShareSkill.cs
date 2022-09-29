@@ -7,10 +7,12 @@ using AutoItX3Lib;
 
 namespace MarsFramework.Pages
 {
-    public class ShareSkill : Driver
+    public class ShareSkill
     {
-        public ShareSkill()
+        IWebDriver driver;
+        public ShareSkill(IWebDriver _driver)
         {
+            driver = _driver;
             PageFactory.InitElements(driver, this);
         }
 
@@ -120,8 +122,10 @@ namespace MarsFramework.Pages
         [FindsBy(How = How.XPath, Using = "//div[contains(text(), 'Service Listing Added successfully')]")]
         private IWebElement notification { get; set; }
 
-        //html/body/div[1]
-        
+        //Notification 2
+        [FindsBy(How = How.XPath, Using = "//div[contains(text(), 'Please complete the form correctly.')]")]
+        private IWebElement notificationInvalidEntry { get; set; }
+
 
         #endregion
 
@@ -168,6 +172,47 @@ namespace MarsFramework.Pages
             WaitForElement(driver, By.XPath("//div[contains(text(), 'Service Listing Added successfully')]"));
         }
 
+        public void EnterShareSkillInvalidDescription(int testCase)
+        {
+            // Referencing to an excel file and sheet name
+            ExcelLibHelper.PopulateInCollection(ConstantHelper.ExcelDataPath, "ShareSkill");
+            testCase = testCase + 1;
+
+            ShareSkillButton.Click();
+            WaitForPageToLoad();
+            Title.SendKeys(ExcelLibHelper.ReadData(testCase, "Title"));
+            Description.SendKeys(ExcelLibHelper.ReadData(testCase, "Description"));
+            CategoryDropDown.SendKeys(ExcelLibHelper.ReadData(testCase, "Category"));
+            SubCategoryDropDown.SendKeys(ExcelLibHelper.ReadData(testCase, "Subcategory"));
+            Tags.SendKeys(ExcelLibHelper.ReadData(testCase, "Tags"));
+            Tags.SendKeys(Keys.Enter);
+            ServiceTypeOption(ExcelLibHelper.ReadData(testCase, "Service Type"));
+            LocationTypeOption.Click();
+            StartDateDropDown.SendKeys(ExcelLibHelper.ReadData(testCase, "Start date"));
+            EndDateDropDown.SendKeys(ExcelLibHelper.ReadData(testCase, "End date"));
+            Days.Click();
+            PopulateTimeInfo("start", ExcelLibHelper.ReadData(testCase, "Start time"));
+            PopulateTimeInfo("end", ExcelLibHelper.ReadData(testCase, "End time"));
+            SkillTradeOption.Click();
+            SkillExchange.SendKeys(ExcelLibHelper.ReadData(testCase, "Skill-Exchange"));
+            SkillExchange.SendKeys(Keys.Enter);
+            WorkSample.Click();
+            Thread.Sleep(1000);
+
+            AutoItX3 autoIt = new AutoItX3();
+            string workSampleFile = (ExcelLibHelper.ReadData(testCase, "Work Samples"));
+            autoIt.WinActivate("Open");
+            Thread.Sleep(1000);
+            autoIt.Send(ConstantHelper.Fileupload + workSampleFile);
+            Thread.Sleep(2000);
+            autoIt.Send("{ENTER}");
+            Thread.Sleep(1000);
+
+            ActiveOption.Click();
+            Thread.Sleep(5000);
+            Save.Click();
+            WaitForElement(driver, By.XPath("//div[contains(text(), 'Please complete the form correctly.')]"));
+        }
 
         public void EditShareSkill()
         {
@@ -189,6 +234,50 @@ namespace MarsFramework.Pages
             Save.Click();
             WaitForPageToLoad();
         }
+
+
+        public void EnterShareSkillInvalidWorkSampleFile(int testCase)
+        {
+            // Referencing to an excel file and sheet name
+            ExcelLibHelper.PopulateInCollection(ConstantHelper.ExcelDataPath, "ShareSkill");
+            testCase = testCase + 1;
+
+            ShareSkillButton.Click();
+            WaitForPageToLoad();
+            Title.SendKeys(ExcelLibHelper.ReadData(testCase, "Title"));
+            Description.SendKeys(ExcelLibHelper.ReadData(testCase, "Description"));
+            CategoryDropDown.SendKeys(ExcelLibHelper.ReadData(testCase, "Category"));
+            SubCategoryDropDown.SendKeys(ExcelLibHelper.ReadData(testCase, "Subcategory"));
+            Tags.SendKeys(ExcelLibHelper.ReadData(testCase, "Tags"));
+            Tags.SendKeys(Keys.Enter);
+            ServiceTypeOption(ExcelLibHelper.ReadData(testCase, "Service Type"));
+            LocationTypeOption.Click();
+            StartDateDropDown.SendKeys(ExcelLibHelper.ReadData(testCase, "Start date"));
+            EndDateDropDown.SendKeys(ExcelLibHelper.ReadData(testCase, "End date"));
+            Days.Click();
+            PopulateTimeInfo("start", ExcelLibHelper.ReadData(testCase, "Start time"));
+            PopulateTimeInfo("end", ExcelLibHelper.ReadData(testCase, "End time"));
+            SkillTradeOption.Click();
+            SkillExchange.SendKeys(ExcelLibHelper.ReadData(testCase, "Skill-Exchange"));
+            SkillExchange.SendKeys(Keys.Enter);
+            WorkSample.Click();
+            Thread.Sleep(1000);
+
+            AutoItX3 autoIt = new AutoItX3();
+            string workSampleFile = (ExcelLibHelper.ReadData(testCase, "Work Samples"));
+            autoIt.WinActivate("Open");
+            Thread.Sleep(1000);
+            autoIt.Send(ConstantHelper.Fileupload + workSampleFile);
+            Thread.Sleep(2000);
+            autoIt.Send("{ENTER}");
+            Thread.Sleep(1000);
+
+            ActiveOption.Click();
+            Thread.Sleep(5000);
+            Save.Click();
+            WaitForElement(driver, By.XPath("//div[contains(text(), 'Max file size is 2 MB and supported file types are gif / jpeg / png / jpg / doc(x) / pdf / txt / xls(x)')]"));
+        }
+
 
         public void EnterShareSkill_TitleIsRequired(int testCase)
         {
@@ -347,7 +436,7 @@ namespace MarsFramework.Pages
                 StartTimeDropDown.SendKeys(eTime[1]);
 
                 // am/pm
-                StartTimeDropDown.SendKeys(timeToExtract.Substring(eTime.Length - 2));
+                StartTimeDropDown.SendKeys(_eTime[2]);
             }
             else if (whichTime == "end") 
             {
@@ -357,8 +446,8 @@ namespace MarsFramework.Pages
                 // minutes
                 EndTimeDropDown.SendKeys(eTime[1]);
 
-                // am/pm
-                EndTimeDropDown.SendKeys(timeToExtract.Substring(eTime.Length - 2));
+                // am/pm 
+                EndTimeDropDown.SendKeys(_eTime[2]);
             }
         }
 
@@ -381,6 +470,10 @@ namespace MarsFramework.Pages
         public string GetNotification()
         {
             return notification.Text;
+        }
+        public string GetNotificationInvalidEntry()
+        {
+            return notificationInvalidEntry.Text;
         }
     }
 }
